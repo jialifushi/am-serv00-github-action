@@ -9,12 +9,12 @@ re="\033[0m"
 
 # 打印欢迎信息
 echo ""
-purple "=== serv00 | AM科技 一键保活脚本 ===\n"
+purple "=== serv00 | 科技 一键保活脚本 ===\n"
 echo -e "${green}脚本地址：${re}${yellow}https://github.com/jialifushi/am-serv00-github-action${re}\n"
 echo -e "${green}YouTube频道：${re}${yellow}https://youtube.com/@HertzHe-m6o${re}\n"
 echo -e "${green}个人博客：${re}${yellow}https://store.superspace.us.kg/${re}\n"
 echo -e "${green}TG反馈群组：${re}${yellow}https://t.me/_CLUBS${re}\n"
-purple "=== 转载请著名出处 AM科技，请勿滥用 ===\n"
+purple "=== 转载请著名出处 科技，请勿滥用 ===\n"
 
 base_url="https://raw.githubusercontent.com/amclubs"
 
@@ -126,7 +126,11 @@ for server_info in "${!servers[@]}"; do
             if check_port "$server" "$port"; then
                 print_status "$green" "端口 $port 在 $server 正常"
                 if [ -n "$TG_TOKEN" ] && [ -n "$CHAT_ID" ]; then
-                    send_telegram_message "🟢端口检测成功: $server 用户名: $username 端口: $port 服务: $service"
+                    send_telegram_message "✅ 成功登录到服务。"
+                    send_telegram_message "💻 主机名：s14"
+                    send_telegram_message "🕰 定时报告：@hourly"
+                    send_telegram_message "🟢 端口检测成功: $server 用户名: $username 端口: $port 服务: $service"
+                    send_telegram_message "🌐 <$service>服务正常 📡 <$port>端口正常"
                 fi
                 break
             else
@@ -143,7 +147,11 @@ for server_info in "${!servers[@]}"; do
                 if check_argo "$argo_domain"; then
                     print_status "$green" "Argo 隧道在线"
                     if [ -n "$TG_TOKEN" ] && [ -n "$CHAT_ID" ]; then
+                        send_telegram_message "✅ 成功登录到服务。"
+                        send_telegram_message "💻 主机名：s14"
+                        send_telegram_message "🕰 定时报告：@hourly"
                         send_telegram_message "🟢Argo 隧道检测成功: $server 用户名: $username 域名: $argo_domain 服务: $service"
+                        send_telegram_message "🌐 <$service>服务正常 📡 <$port>端口正常"
                     fi
                     break
                 else
