@@ -9,12 +9,12 @@ re="\033[0m"
 
 # 打印欢迎信息
 echo ""
-purple "=== serv00 | AM科技 一键保活脚本 ===\n"
-echo -e "${green}脚本地址：${re}${yellow}https://github.com/amclubs/am-serv00-github-action${re}\n"
-echo -e "${green}YouTube频道：${re}${yellow}https://youtube.com/@AM_CLUBS${re}\n"
-echo -e "${green}个人博客：${re}${yellow}https://am.809098.xyz${re}\n"
-echo -e "${green}TG反馈群组：${re}${yellow}https://t.me/AM_CLUBS${re}\n"
-purple "=== 转载请著名出处 AM科技，请勿滥用 ===\n"
+purple "=== serv00 | 科技 一键保活脚本 ===\n"
+echo -e "${green}脚本地址：${re}${yellow}https://github.com/jialifushi/am-serv00-github-action${re}\n"
+echo -e "${green}YouTube频道：${re}${yellow}https://youtube.com/@HertzHe-m6o${re}\n"
+echo -e "${green}个人博客：${re}${yellow}https://store.superspace.us.kg/${re}\n"
+echo -e "${green}TG反馈群组：${re}${yellow}https://t.me/_CLUBS${re}\n"
+purple "=== 转载请著名出处 科技，请勿滥用 ===\n"
 
 # 发送 Telegram 消息的函数
 send_telegram_message() {
@@ -77,9 +77,10 @@ for account in $accounts; do
     echo "正在连接 $username@$ip ..."
     if sshpass -p "$password" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=60 -o ServerAliveInterval=30 -o ServerAliveCountMax=2 -tt "$username@$ip" "sleep 3; exit"; then
         echo "成功激活 $username@$ip"
+	send_telegram_message "📶serv00激活成功🟢: $username@$ip"
     else
         echo "连接激活 $username@$ip 失败"
-        send_telegram_message "serv00激活失败: $username@$ip"
+        send_telegram_message "🆘serv00激活失败🔴: $username@$ip"
     fi
     echo "----------------------------"
 done
