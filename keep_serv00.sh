@@ -127,10 +127,10 @@ for server_info in "${!servers[@]}"; do
                 print_status "$green" "端口 $port 在 $server 正常"
                 if [ -n "$TG_TOKEN" ] && [ -n "$CHAT_ID" ]; then
                     send_telegram_message "✅ 成功登录到服务。
-                    💻 主机名：s14
-                    🕰 定时报告：@hourly
-                    🟢 端口检测成功: $server 用户名: $username 端口: $port 服务: $service
-                    🌐 <$service>服务正常 📡 <$port>端口正常"
+        💻 主机名：s14
+        🕰 定时报告：@hourly
+        🟢 端口检测成功: $server 用户名: $username 端口: $port 服务: $service
+        🌐 <$service>服务正常 📡 <$port>端口正常"
                 fi
                 break
             else
@@ -147,12 +147,11 @@ for server_info in "${!servers[@]}"; do
                 if check_argo "$argo_domain"; then
                     print_status "$green" "Argo 隧道在线"
                     if [ -n "$TG_TOKEN" ] && [ -n "$CHAT_ID" ]; then
-                        send_telegram_message "
-                        ✅ 成功登录到服务。
-                        💻 主机名：s14
-                        🕰 定时报告：@hourly
-                        🟢 Argo 隧道检测成功: $server 用户名: $username 域名: $argo_domain 服务: $service
-                        🌐 <$service>服务正常 📡 <$port>端口正常"
+                        send_telegram_message "✅ 成功登录到服务。
+            💻 主机名：s14
+            🕰 定时报告：@hourly
+            🟢 Argo 隧道检测成功: $server 用户名: $username 域名: $argo_domain 服务: $service
+            🌐 <$service>服务正常 📡 <$port>端口正常"
                     fi
                     break
                 else
