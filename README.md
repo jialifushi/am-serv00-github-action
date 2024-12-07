@@ -1,21 +1,13 @@
-# [am-serv00-github-action](https://github.com/amclubs/am-serv00-github-action)
+# [am-serv00-github-action](https://github.com/jialifushi/am-serv00-github-action)
 通过GitHub Action 实现serv00、socks5、vmess、x-ui面板、哪吒面板、节点等在serv00里部署的程序保活、serv00帐号保活,并可TG通过
 
 #
 ▶️ **新人[YouTube](https://youtube.com/@AM_CLUB)** 需要您的支持，请务必帮我**点赞**、**关注**、**打开小铃铛**，***十分感谢！！！*** ✅
 </br>🎁 不要只是下载或Fork。请 **follow** 我的GitHub、给我所有项目一个 **Star** 星星（拜托了）！你的支持是我不断前进的动力！ 💖
-</br>✅**解锁更多技术请点击进入 YouTube频道[【@AM_CLUB】](https://youtube.com/@AM_CLUB) 、[【个人博客】](https://am.809098.xyz)** 、TG群[【AM科技 | 分享交流群】](https://t.me/AM_CLUBS) 、获取免费节点[【进群发送关键字: 订阅】](https://t.me/AM_CLUBS)
+</br>✅**解锁更多技术请点击进入
 
 
-#
-- [部署视频教程](https://youtu.be/zkGGklEaO2I)
-- huggingface部署青龙面板定时保活教程：[点击进入观看](https://youtu.be/J4lcIwBowmM)
-- VLESS免费节点部署视频教程：[点击进入观看](https://youtu.be/dPH63nITA0M) 
-- Trojan免费节点部署视频教程：[点击进入观看](https://youtu.be/uh27CVVi6HA) 
-- serv00所有部署教程：[点击进入观看](https://www.youtube.com/playlist?list=PLGVQi7TjHKXaVlrHP9Du61CaEThYCQaiY)
-- Cloudflare部署免费节点所有视频教程：[点击进入观看](https://www.youtube.com/playlist?list=PLGVQi7TjHKXbrY0Pk8gm3T7m8MZ-InquF) 
-
-## 一、实现serv00帐号定时保活（keep_serv00_ssh.yml），默认每5天定时保活
+## 一、实现serv00帐号定时保活（keep_serv00_ssh.yml），定时保活
 找到项目点 Settings -> 左边点 Secrets and variables -> 点 Actions -> 在 Secrets 增加下面变量,根据自己的数据填 
 - 帐号信息变量（必填）：SSH_ACCOUNTS 
 ```
