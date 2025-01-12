@@ -78,6 +78,19 @@ for account in $accounts; do
     if sshpass -p "$password" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=60 -o ServerAliveInterval=30 -o ServerAliveCountMax=2 -tt "$username@$ip" "sleep 3; exit"; then
         echo "成功激活 $username@$ip"
 	send_telegram_message "📶serv00激活成功🟢: $username@$ip"
+        # 切换到 agent 目录并执行 ./start.sh
+        echo "🔄 正在切换到 agent 目录并启动服务..."
+        output=$(sshpass -p "$password" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=60 -o ServerAliveInterval=30 -o ServerAliveCountMax=2 -tt "$username@$ip" "cd agent && ./start.sh")
+        
+        if [ $? -eq 0 ]; then
+            echo "📋 服务启动成功: $username@$ip"
+            echo "$output"
+            send_telegram_message "✅ 监控服务📈启动成功: $username@$ip"
+        else
+            echo "❌ 服务启动失败: $username@$ip"
+            send_telegram_message "🆘 监控服务📈启动失败: $username@$ip"
+        fi
+ 
     else
         echo "连接激活 $username@$ip 失败"
         send_telegram_message "🆘serv00激活失败🔴: $username@$ip"
